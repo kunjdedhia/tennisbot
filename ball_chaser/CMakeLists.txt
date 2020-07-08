@@ -207,3 +207,7 @@ include_directories(
 add_executable(drive_bot src/drive_bot.cpp)
 add_dependencies(drive_bot ball_chaser_generate_messages_cpp)
 target_link_libraries(drive_bot ${catkin_LIBRARIES})
+
+add_executable(process_img src/process_img.cpp)
+add_dependencies(process_img ball_chaser_generate_messages_cpp)
+target_link_libraries(process_img ${catkin_LIBRARIES})

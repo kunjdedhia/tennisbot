@@ -10,7 +10,7 @@ ros::Publisher motor_command_publisher;
 
 bool handle_drive_request(ball_chaser::DriveToTarget::Request& req, ball_chaser::DriveToTarget::Response& res) {
     // publish the requested velocities instead of constant values
-    while (ros::ok()) {
+    // while (ros::ok()) {
         // Create a motor_command object of type geometry_msgs::Twist
         geometry_msgs::Twist motor_command;
         // Set wheel velocities, forward [0.5, 0.0]
@@ -20,7 +20,7 @@ bool handle_drive_request(ball_chaser::DriveToTarget::Request& req, ball_chaser:
         motor_command_publisher.publish(motor_command);
 
         res.msg_feedback = "Linear_x: " + std::to_string(req.linear_x) + " Angular_z: " + std::to_string(req.angular_z);
-    }
+    // }
 
     return true;
 }
